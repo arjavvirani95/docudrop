@@ -1,0 +1,36 @@
+{
+  "name": "docudrop",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Expiring file-sharing drops on AWS: S3 presigned uploads, Lambda, DynamoDB, CloudFront + React",
+  "workspaces": [
+    "web"
+  ],
+  "scripts": {
+    "typecheck": "tsc --noEmit && npm run typecheck -w web",
+    "test": "vitest run",
+    "build:web": "npm run build -w web",
+    "synth": "cdk synth",
+    "deploy": "npm run build:web && cdk deploy"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@aws-sdk/client-dynamodb": "^3.1146.0",
+    "@aws-sdk/client-s3": "^3.1146.0",
+    "@aws-sdk/lib-dynamodb": "^3.1146.0",
+    "@aws-sdk/s3-presigned-post": "^3.1146.0",
+    "@aws-sdk/s3-request-presigner": "^3.1146.0"
+  },
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.164",
+    "@types/node": "^26.6.4",
+    "aws-cdk": "^2.1144.0",
+    "aws-cdk-lib": "^2.272.0",
+    "constructs": "^10.8.1",
+    "esbuild": "^0.28.2",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2",
+    "vitest": "^5.0.3"
+  }
+}
